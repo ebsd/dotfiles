@@ -12,6 +12,7 @@ autocmd TextChanged,TextChangedI <buffer> silent write
 autocmd FileType text setlocal textwidth=80
 inoremap jj <Esc>
 autocmd vimenter *.md Goyo
+autocmd vimenter *.txt Goyo
 
 call plug#begin()
 Plug 'junegunn/goyo.vim'
