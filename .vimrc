@@ -5,7 +5,8 @@ set nocompatible
 filetype plugin on
 syntax on
 
-set spell
+autocmd FileType markdown setlocal spell
+autocmd FileType text setlocal spell
 set spelllang+=fr
 autocmd TextChanged,TextChangedI <buffer> silent write
 autocmd FileType text setlocal textwidth=80
