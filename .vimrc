@@ -8,6 +8,8 @@ syntax on
 autocmd FileType markdown setlocal spell
 autocmd FileType text setlocal spell
 set spelllang+=fr
+hi clear SpellBad
+hi SpellBad cterm=underline
 autocmd TextChanged,TextChangedI <buffer> silent write
 autocmd FileType text setlocal textwidth=80
 inoremap jj <Esc>
