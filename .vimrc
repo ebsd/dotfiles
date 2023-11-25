@@ -32,8 +32,8 @@ call plug#end()
 
 " Plaintext journaling
 "" insert fancy signifiers with abbrevs
-iabbrev todo ·
-iabbrev done ×
+autocmd vimenter */journal/* abbrev todo ·
+autocmd vimenter */journal/* abbrev done ×
 
 "" select the task list and hit `gq` to sort and group by status
 autocmd Vimenter */journal/* set formatprg=sort\ -V
