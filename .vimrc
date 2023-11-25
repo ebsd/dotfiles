@@ -5,14 +5,23 @@ set nocompatible
 filetype plugin on
 syntax on
 
+" spellcheck pour ces types de fichiers
 autocmd FileType markdown setlocal spell
 autocmd FileType text setlocal spell
 set spelllang+=fr
 hi clear SpellBad
+"" souligner les erreurs
 hi SpellBad cterm=underline
+
+" enregistrement auto
 "autocmd TextChanged,TextChangedI <buffer> silent write
+" maxi 72 colonnes pour les types de fichier text
 autocmd FileType text setlocal textwidth=72
+
+" jj en remplacement / complément de Esc, c'est plus rapide  
 inoremap jj <Esc>
+
+" Plugin Goyo pour ces extensions de fichiers
 autocmd vimenter *.md Goyo
 autocmd vimenter *.txt Goyo
 
@@ -22,14 +31,14 @@ Plug 'junegunn/goyo.vim'
 call plug#end()
 
 " Plaintext journaling
-" insert fancy signifiers with abbrevs
+"" insert fancy signifiers with abbrevs
 iabbrev todo ·
 iabbrev done ×
 
-" select the task list and hit `gq` to sort and group by status
+"" select the task list and hit `gq` to sort and group by status
 autocmd Vimenter */journal/* set formatprg=sort\ -V
 
-" syntax highlighting
+"" syntax highlighting
 augroup JournalSyntax
     autocmd!
     autocmd BufReadPost */journal/* set filetype=journal
