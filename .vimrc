@@ -53,7 +53,7 @@ augroup JournalSyntax
 
     autocmd BufReadPost */journal/* highlight JournalAll    ctermfg=103
     autocmd BufReadPost */journal/* highlight JournalHeader ctermfg=250
-    autocmd BufReadPost */journal/* highlight JournalDone   ctermfg=252
+    autocmd BufReadPost */journal/* highlight JournalDone   ctermfg=8
     autocmd BufReadPost */journal/* highlight JournalEvent  ctermfg=6               " cyan
     autocmd BufReadPost */journal/* highlight JournalMoved  ctermfg=5               " pink
     autocmd BufReadPost */journal/* highlight JournalNote   ctermfg=3               " yellow
