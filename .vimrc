@@ -21,14 +21,14 @@ autocmd FileType text setlocal textwidth=72
 " jj en remplacement / complément de Esc, c'est plus rapide  
 inoremap jj <Esc>
 
-" Plugin Goyo pour ces extensions de fichiers
-autocmd vimenter *.md Goyo
-autocmd vimenter *.txt Goyo
-
 " plugins
 call plug#begin()
 Plug 'junegunn/goyo.vim'
 call plug#end()
+
+" Plugin Goyo pour ces extensions de fichiers
+autocmd vimenter *.md Goyo
+autocmd vimenter *.txt Goyo
 
 " Plaintext journaling
 "" insert fancy signifiers with abbrevs
@@ -36,7 +36,7 @@ autocmd vimenter */journal/* abbrev todo ·
 autocmd vimenter */journal/* abbrev done ×
 
 "" select the task list and hit `gq` to sort and group by status
-autocmd Vimenter */journal/* set formatprg=sort\ -V
+autocmd vimenter */journal/* set formatprg=sort\ -V
 
 "" syntax highlighting
 augroup JournalSyntax
@@ -60,14 +60,14 @@ augroup JournalSyntax
     autocmd BufReadPost */journal/* highlight VertSplit     ctermfg=0  ctermbg=0    " hide vert splits
 augroup END
 
-"augroup JournalHideUIElements
-"    autocmd!
-"    " hide junk
-"    autocmd VimEnter * set laststatus=0
-"    autocmd VimEnter * set noruler nonumber nocursorline nocursorcolumn norelativenumber
-"
-"    " pin scrolling
-"    autocmd VimEnter * set scrollbind
-"
-"augroup END
+augroup JournalHideUIElements
+    autocmd!
+    " hide junk
+    autocmd vimEnter */journal/* set laststatus=0
+    autocmd vimEnter */journal/* set noruler nonumber nocursorline nocursorcolumn norelativenumber
+
+    " pin scrolling
+"    autocmd vimEnter */journal/* set scrollbind
+
+augroup END
 " /Plaintext journaling
